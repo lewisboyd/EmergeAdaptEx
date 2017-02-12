@@ -1,0 +1,25 @@
+html
+  head
+    title="Index"
+    style
+      include style.css
+
+  body
+    h1(class="title")=name
+    h2 Your Enquiries
+    a(class="home" href='/') Back to search
+
+    //Loops through each case creating a table holding all the data
+    each val,index in cases
+      div(class="divider")
+      table
+        tr
+          th(class="indexth") Creation Date
+          td(class="indextd")=val.date
+        tr
+          th(class="indexth") Source
+          td(class="indextd")=val.source
+        tr
+          th(class="indexth") Message
+          td(class="indextd")=val.message
+      a(href='search?client='+client+'&case='+index) More Details

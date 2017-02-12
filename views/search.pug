@@ -1,0 +1,15 @@
+html
+  head
+    title="CaseBlocks App"
+    style
+      include style.css
+
+  body
+    h1(class="title") Simple CaseBlocks App
+    form(action="/search" method="get")
+      p(class="Search") What is your client reference?
+      input(type="number" name="client")
+      p: button(type="submit") Enter
+      //If a search failed then an error message will appear
+      if failedSearch
+        p(class="error")=failedSearch

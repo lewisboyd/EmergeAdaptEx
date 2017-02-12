@@ -1,0 +1,15 @@
+html
+  head
+    title="Enquiry"
+    style
+      include style.css
+
+  body
+    h1(class="title") Enquiry Details
+    a(class="home" href='search?client='+client) Back to enquiries
+    //Loops through all the information creating a row for each key-value
+    table
+      for val, index in info
+        tr
+          th=index
+          td=val
